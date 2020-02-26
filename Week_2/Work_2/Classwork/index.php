@@ -12,21 +12,20 @@
         <input type="submit" name="check" value="CHECK">
     </form>
     <?php
-        $downCount=0;
-        $upCount=0;
+        $bool = true;
         $numbers = [10, 12, 54, 23, 80, 76, 23, 95, 33, 55, 11, 17];
-        echo "Masivi: ";
         print_r($numbers);
         if(isset($_POST["check"])){
             for($i=0; $i<count($numbers); $i++){
-                if($numbers[$i]<$_POST["x"]){
-                    $upCount++;
-                }
-                else if($numbers[$i]>$_POST["x"]){
-                    $downCount++;
+                if($numbers[$i]==$_POST["x"]){
+                    $bool = false;
+                    echo "<br> Array Numbers does contain ".$_POST["x"];
+                break;
                 }
             }
-            echo "<br> Masivshi ".$_POST["x"]."-ze didi " .$upCount." ricxvia da patara ".$downCount;
+            if($bool){
+                echo "<br> Array Numbers does not contain ".$_POST["x"];
+            }
         }
     ?>
 </body>
