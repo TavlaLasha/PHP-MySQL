@@ -27,7 +27,7 @@
         <input type="submit" value="შეტანა" name="send">
     </form>
     <?php
-        $jeradebi=0;
+        $jeradebi= array();
         $jami=0;
         $namravli=1;
         
@@ -35,14 +35,18 @@
             for($col=0; $col<4; $col++){
                 for($row=0; $row<4; $row++){
                     if($nums[$col][$row]%$_POST['numb']==0){
-                        $jeradebi+=strval($nums[$col][$row]).", ";
+                        array_push($jeradebi, $nums[$col][$row]);
                     }
                     $jami+=$nums[$col][$row];
                     $namravli*=$nums[$col][$row];
                 }
             }
             $sashualo=$jami/16;
-            echo "x-ის ჯერადი რიცხვები მატრიციდან: ".$jeradebi;
+            echo "<br>x-ის ჯერადი რიცხვები მატრიციდან: ";
+            print_r($jeradebi);
+            echo "<br>რიცხვების ჯამი მატრიცაში: ".$jami;
+            echo "<br>რიცხვების საშუალო მატრიცაში: ".$sashualo;
+            echo "<br>რიცხვების ნამრავლი მატრიცაში: ".$namravli;
         }
     ?>
 </body>

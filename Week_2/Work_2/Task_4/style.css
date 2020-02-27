@@ -1,0 +1,9 @@
+table {
+    border: solid 1px black;
+    background-color: silver;
+}
+td {
+    border: solid 1px black;
+    padding: 5px;
+    background-color: white;
+}
