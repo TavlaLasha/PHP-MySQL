@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+#cap{
+    margin: auto;
+    border: solid 2px black;
+    border-radius: 5px;
+    width: 250px;
+    height: 120px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    background-color: silver;
+}
+#word{
+    margin: 5px auto;
+    height: 70px;
+    background-color: aqua;
+    color: teal;
+    font-weight: bold;
+    font-size: 3em;
+    font-style: italic;
+    cursor: none;
+}
+#cap > input {
+    float: left;
+}
+#info {
+    margin: 10px;
+}
