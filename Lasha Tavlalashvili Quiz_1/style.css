@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+}
+form{
+    width: 420px;
+    /* background-color: silver; */
+    height: 400px;
+    margin: auto;
+    text-align: center;
+}
+input{
+    margin-right: 5px;
+}
+span{
+    color: red;
+}
+table{
+    margin: auto;
+}
+td{
+    padding: 2px 5px;
+}
+table, td{
+    border: solid 1px black;
+}
