@@ -1,0 +1,33 @@
+header, footer, #container {
+    width: 80%;
+    height: 500px;
+    border: solid 1px black;
+    margin: 5px auto;
+}
+#topnav {
+    width: 80%;
+    height: 50px;
+    border: solid 1px black;
+    margin: 5px auto;
+}
+header{
+    height: 100px
+}
+#container{
+    min-height: 500px;
+    display: flex;
+}
+footer{
+    height: 70px
+}
+nav{
+    width: 200px;
+    height: 500px;
+    border-right: solid 1px black;
+}
+article{
+    width: 100%;
+    /* background-color: silver; */
+    min-height: 500px;
+    border: solid 2px blue;
+}

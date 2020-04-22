@@ -2,12 +2,13 @@
     $server = "localhost";
     $user = "root";
     $password = "";
-    $dbname = "mydata";
+    $dbname = "gau2020db";
 
     $connection = mysqli_connect($server, $user, $password, $dbname);
     // var_dump($connection);
     if(!$connection){
         die("Connection Error!!!");
+    }else{
+        echo "Connection Successfull";
     }
-    echo "<script> console.log('Connection Successfull')</script>";
 ?>

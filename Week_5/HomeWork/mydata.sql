@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2020 at 02:52 PM
+-- Generation Time: Apr 22, 2020 at 08:36 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -50,7 +50,7 @@ INSERT INTO `data` (`Id`, `Title`, `Date`, `Type`, `Photo`, `Text`, `Autor`, `De
 (2, 'Meore monacemi', '2020-03-26', 'Sul Sxvanairi', 'daikarga', 'teqstia teqsti', 'Lasha', 'agwera', 'radio ucnobi', 'ar vici'),
 (3, 'Mesame monacemi', '2020-03-03', 'Dakarguli', 'ar girs', 'teqstnairi', 'Lasha', 'avgwere', 'info', 'unknown'),
 (4, 'Meotxe monacemi', '2020-04-08', 'Gachumebuli', '...', 'teqsti 4', 'Lasha', 'Meotxes agwera', 'k', 'd'),
-(5, 'Mexute monacemi', '2020-04-08', 'Unknown', 'Photo 5', 'Text 5', 'Lasha', 'Description 5', 'kk', 'dd'),
+(5, 'Mexute monacemi', '2020-04-08', '2', 'Photo 5', 'Text 5', 'Lasha', 'Description 5', 'kk', 'dd'),
 (6, 'Meeqvse monacemi', '2020-04-08', 'Sxvanairi', 'daikarga', 'Text 6', 'Lasha', 'Description 6', 'k6', 'd6'),
 (7, 'Meshvide monacemi', '2020-04-08', 'Unknown', 'Photo 7', 'Text 7', 'Lasha', 'Desc 7', 'k7', 'd7'),
 (8, 'Merve monacemi', '2020-04-08', 'Sxvanairi', 'Photo 8', 'Text 8', 'Lasha', 'Desc 8', 'k8', 'd8'),
@@ -62,10 +62,10 @@ INSERT INTO `data` (`Id`, `Title`, `Date`, `Type`, `Photo`, `Text`, `Autor`, `De
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu,`
+-- Table structure for table `menu`
 --
 
-CREATE TABLE `menu,` (
+CREATE TABLE `menu` (
   `id` int(10) UNSIGNED NOT NULL,
   `Title` varchar(50) NOT NULL,
   `Meta_k` varchar(200) NOT NULL,
@@ -74,15 +74,15 @@ CREATE TABLE `menu,` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `menu,`
+-- Dumping data for table `menu`
 --
 
-INSERT INTO `menu,` (`id`, `Title`, `Meta_k`, `Meta_d`, `Text`) VALUES
-(1, 'Monacemta baza', '', '', 'Es aris chemi pirveli monacemebis cxrili'),
+INSERT INTO `menu` (`id`, `Title`, `Meta_k`, `Meta_d`, `Text`) VALUES
+(1, 'ფაილები', 'მ1', 'მ2', 'Es aris chemi pirveli monacemebis cxrili'),
 (2, 'Meore striqoni', 'k1', 'd1', 'meore striqonis teqsti'),
-(3, 'Mesame monacemis satauri', 'k3', 'd3', '1 saati da 30 wuti darcha leqciis damtavrebamde'),
-(4, 'Bazis Shesaxeb', 'k4', 'd4', 'About base'),
-(5, 'LogIn', 'k5', 'd5', 'Login Text');
+(3, 'თამაშები', 'k3', 'd3', '1 saati da 30 wuti darcha leqciis damtavrebamde'),
+(4, 'მუსიკები', 'k4', 'd4', 'About base'),
+(5, 'ფილმები', 'k5', 'd5', 'Login Text');
 
 -- --------------------------------------------------------
 
@@ -107,8 +107,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`Id`, `Name`, `Lastname`, `Age`, `BirthDay`, `Reg_Date`, `Password`, `Gender`) VALUES
 (1, 'Lasha ', 'Tavlalashvili', 19, '2010-09-30', '2020-03-26', '2000 pirdapir ver avirchie :DD', 'Male'),
-(2, 'Isev Lasha', 'Isev Tavlalashvili', 19, '2020-03-02', '2020-03-26', '**************', 'Male'),
-(3, 'Lashacieli', 'Tavlala', 19, '2020-03-04', '2020-03-26', 'Daparuli paroli', 'Male!'),
+(2, 'Isev Lasha', 'Isev Tavlalashvili', 12, '2014-07-04', '2020-03-26', '**************', 'Male'),
+(3, 'Lashacieli', 'Tavlala', 16, '2014-06-25', '2020-03-26', 'Daparuli paroli', 'Male!'),
 (4, 'Cotne', 'Loladze', 19, '2020-04-08', '2020-04-08', 'cotnicieli', 'Male'),
 (5, 'Misha', 'Arushaniani', 23, '2020-04-08', '2020-04-08', 'mishasparoli', 'Male');
 
@@ -123,9 +123,9 @@ ALTER TABLE `data`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `menu,`
+-- Indexes for table `menu`
 --
-ALTER TABLE `menu,`
+ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -145,9 +145,9 @@ ALTER TABLE `data`
   MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `menu,`
+-- AUTO_INCREMENT for table `menu`
 --
-ALTER TABLE `menu,`
+ALTER TABLE `menu`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --

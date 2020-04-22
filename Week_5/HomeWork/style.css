@@ -1,0 +1,8 @@
+div{
+    border: solid 1px blue;
+    width: 300px;
+    min-height: 50px;
+    text-align: center;
+    margin: 5px auto;
+    font-size: 20px;
+}
