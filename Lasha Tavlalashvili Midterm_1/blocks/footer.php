@@ -11,7 +11,7 @@
             </tr>
             <tr>
             <?php
-                if($num_rows>=7){
+                if($num_rows>=7 || $_GET['top']=='ref'){
                     $arr=array();
                     $query = "SELECT * FROM Varjishi";
                     $result = mysqli_query($connection, $query);
@@ -26,11 +26,13 @@
                         // echo $info;
                         echo "<td><a href='?cat=".$info."'>".$info."</a></td>";
                     }
-                }
+                    
             ?>
             </tr>
         </table>
         <?php
+            echo "<a href='?top=ref' id='button'>Refresh</a>";
+            }
             if(isset($_POST['sub'])){
                 $query = "SELECT * FROM Varjishi";
                 $result = mysqli_query($connection, $query);
@@ -41,7 +43,6 @@
                     VALUES ('$Dasaxeleba', '$Ganmarteba')";
                     mysqli_query($connection, $sql);
                 }
-                
             }
         ?>
         <form action="" method="post">

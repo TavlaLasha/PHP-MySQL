@@ -66,3 +66,7 @@ td{
     border:solid 1px black;
     padding: 5px;
 }
+#button{
+    background-color: white;
+    margin-left: 20px;
+}
