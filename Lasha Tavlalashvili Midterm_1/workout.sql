@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2020 at 05:37 PM
+-- Generation Time: Apr 23, 2020 at 06:03 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -21,6 +21,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `workout`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shenaxuli`
+--
+
+CREATE TABLE `shenaxuli` (
+  `id` int(11) NOT NULL,
+  `Dasaxeleba` text NOT NULL,
+  `Ganmarteba` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shenaxuli`
+--
+
+INSERT INTO `shenaxuli` (`id`, `Dasaxeleba`, `Ganmarteba`) VALUES
+(1, 'dfgdfs', 'dsfhgdsf'),
+(2, 'fgjjjj', 'ffgdd'),
+(3, '12222', 'dsg'),
+(4, '443566', 'dfghhh'),
+(5, 'sdgfh', 'dsfhgsd'),
+(6, 'sagdfsh', 'sdagfasd'),
+(7, 'sadfsadg', 'sdgasdg'),
+(8, 'dfgdfs', 'dsfhgdsf');
 
 -- --------------------------------------------------------
 
@@ -52,6 +78,12 @@ INSERT INTO `varjishi` (`id`, `Dasaxeleba`, `Ganmarteba`) VALUES
 --
 
 --
+-- Indexes for table `shenaxuli`
+--
+ALTER TABLE `shenaxuli`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `varjishi`
 --
 ALTER TABLE `varjishi`
@@ -60,6 +92,12 @@ ALTER TABLE `varjishi`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `shenaxuli`
+--
+ALTER TABLE `shenaxuli`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `varjishi`

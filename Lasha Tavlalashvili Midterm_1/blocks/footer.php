@@ -30,4 +30,21 @@
             ?>
             </tr>
         </table>
+        <?php
+            if(isset($_POST['sub'])){
+                $query = "SELECT * FROM Varjishi";
+                $result = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_assoc($result)){
+                    $Dasaxeleba = $row['Dasaxeleba'];
+                    $Ganmarteba = $row['Ganmarteba'];
+                    $sql = "INSERT INTO shenaxuli (Dasaxeleba, Ganmarteba)
+                    VALUES ('$Dasaxeleba', '$Ganmarteba')";
+                    mysqli_query($connection, $sql);
+                }
+                
+            }
+        ?>
+        <form action="" method="post">
+            <input type="submit" name="sub" value="Shenaxva">
+        </form>
 </footer>
