@@ -24,7 +24,7 @@
                         $random = rand(0, 6);
                         $info = $arr[$random];
                         // echo $info;
-                        echo "<td><a href='?cat=".$row[$info]."'>".$row[$info]."</a></td>";
+                        echo "<td><a href='?cat=".$info."'>".$info."</a></td>";
                     }
                 }
             ?>
