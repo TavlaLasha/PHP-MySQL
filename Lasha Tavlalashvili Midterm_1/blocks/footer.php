@@ -18,9 +18,12 @@
                     while($row = mysqli_fetch_assoc($result)){
                         $arr = array_merge($arr, array_map('trim', explode(",", $row['Dasaxeleba'])));
                     }
-                    for($i=0; $i<=6; $i++){
+                    $query = "SELECT * FROM Varjishi";
+                    $result = mysqli_query($connection, $query);
+                    while($row = mysqli_fetch_assoc($result)){
                         $random = rand(0, 6);
                         $info = $arr[$random];
+                        // echo $info;
                         echo "<td><a href='?cat=".$row[$info]."'>".$row[$info]."</a></td>";
                     }
                 }
