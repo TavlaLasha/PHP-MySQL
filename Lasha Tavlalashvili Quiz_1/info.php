@@ -1,6 +1,4 @@
 <?php
-    
-
     $infname = "";
     $inflastname = "";
     $infbirthdate = "";
