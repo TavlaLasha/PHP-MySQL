@@ -1,0 +1,82 @@
+header {
+    border: solid 1px black;
+    background: silver;
+    width: 80%;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+header > a {
+    font-size: 20px;
+    text-decoration: none;
+    background-color: lightgreen;
+    padding: 5px;
+}
+header > a:hover{
+    background-color: rgb(215, 243, 215);
+}
+#cont {
+    border: solid 1px black;
+    background-image: radial-gradient(lightblue, rgb(101, 101, 255));
+    width: 80%;
+    min-height: 370px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+nav {
+    min-width: 100px;
+    min-height: 400px;
+    background-color: rgb(198, 255, 205);
+    box-sizing: border-box;
+    padding: 10px;
+}
+article{
+    margin: auto;
+}
+span{
+    color: red;
+    text-shadow: black 1px 1px 3px;
+}
+title{
+    font-weight: bold;
+    font-size: 2em;
+}
+footer {
+    width: 80%;
+    min-height: 50px;
+    background-color: silver;
+    margin: auto;
+    text-align: center;
+    border: solid 1px black;
+    box-sizing: border-box;
+    padding: 10px;
+}
+table{
+    margin: auto;
+    text-align: center;
+    border:solid 1px black;
+}
+td{
+    border:solid 1px black;
+    padding: 5px;
+}
+#button{
+    background-color: white;
+    margin-left: 20px;
+}
+button {
+    margin-left: 10px;
+}
+#info {
+    min-width: 200px;
+    min-height: 100px;
+    margin: auto;
+    background-color: white;
+    border-radius: 7px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
