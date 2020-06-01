@@ -17,6 +17,7 @@
 <body>
   <?php
     include "App/blocks/header.php";
+    include "App/blocks/message.php";
   ?>
   <!-- Page wrapper -->
   <div class="page-wrapper">

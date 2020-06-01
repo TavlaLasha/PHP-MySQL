@@ -1,3 +1,6 @@
+<?php
+  include "App/controllers/users.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,16 +26,18 @@
   <div class="auth-content">
     <form action="login.php" method="post">
       <h3 class="form-title">Login</h3>
-      <!-- <div class="msg error">
-        <li>Username required</li>
-      </div> -->
+
+      <?php
+        include "App/helpers/formErrors.php";
+      ?>
+
       <div>
         <label>Username</label>
-        <input type="text" name="username" class="text-input">
+        <input type="text" name="username" value="<?=$username;?>" class="text-input">
       </div>
       <div>
         <label>Password</label>
-        <input type="password" name="password" class="text-input">
+        <input type="password" name="password" value="<?=$password;?>" class="text-input">
       </div>
       <div>
         <button type="submit" name="login-btn" class="btn">Login</button>

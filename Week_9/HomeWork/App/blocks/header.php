@@ -19,8 +19,10 @@
               <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown">
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#" class="logout">logout</a></li>
+            <?php if($_SESSION['admin']):?>
+              <li><a href="admin/dashboard.php">Dashboard</a></li>
+            <?php endif;?>
+              <li><a href="logout.php" class="logout">logout</a></li>
             </ul>
           </li>
         <?php else: ?>

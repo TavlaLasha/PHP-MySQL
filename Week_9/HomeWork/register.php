@@ -26,13 +26,9 @@
     <form action="register.php" method="post">
       <h3 class="form-title">Register</h3>
 
-      <?php if(count($errors) > 0): ?>
-        <div class="msg error">
-          <?php foreach($errors as $error): ?>
-          <li><?=$error;?></li>
-          <?php endforeach; ?>
-        </div>
-      <?php endif; ?>
+      <?php
+        include "App/helpers/formErrors.php";
+      ?>
 
       <div>
         <label>Username</label>
