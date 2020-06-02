@@ -1,4 +1,6 @@
 <?php
+  include "App/database/db.php";
+  include "App/helpers/validateUser.php";
   include "App/controllers/users.php";
 ?>
 <!DOCTYPE html>

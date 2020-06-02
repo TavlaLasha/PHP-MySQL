@@ -59,11 +59,11 @@
                   <td><a href="#"><?=$post['title']; ?></a></td>
                   <td><a href="#">Lasha</a></td>
                   <td><a href="edit.php?id=<?=$post['id']; ?>" class="edit">Edit</a></td>
-                  <td><a href="index.php?del_id=<?=$post['id']; ?>" class="delete">Delete</a></td>
+                  <td><a href="edit.php?del_id=<?=$post['id']; ?>" class="delete">Delete</a></td>
                   <?php if($post['published']): ?>
-                    <td><a href="index.php?del_id=<?=$post['id']; ?>" class="unpublish">Unpublish</a></td>
+                    <td><a href="edit.php?published=0&p_id=<?=$post['id']; ?>" class="unpublish">Unpublish</a></td>
                   <?php else: ?>
-                    <td><a href="index.php?del_id=<?=$post['id']; ?>" class="publish">Publish</a></td>
+                    <td><a href="edit.php?published=1&p_id=<?=$post['id']; ?>" class="publish">Publish</a></td>
                   <?php endif; ?>
                 </tr>
             <?php endforeach; ?>

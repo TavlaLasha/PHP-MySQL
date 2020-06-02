@@ -68,9 +68,15 @@
             </select>
           </div>
           <div class="input-group">
+          <?php if(empty($published)):?>
             <label>
-              <input type="checkbox" name="publish" /> Publish
+              <input type="checkbox" name="publish"> Publish
             </label>
+          <?php else: ?>
+            <label>
+              <input type="checkbox" name="publish" checked> Publish
+            </label>
+          <?php endif; ?>
           </div>
           <div class="input-group">
             <button type="submit" name="save-post" class="btn">Save Post</button>

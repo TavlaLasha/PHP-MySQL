@@ -1,6 +1,20 @@
 <?php
   include "App/database/db.php";
   include "App/controllers/topics.php";
+
+  $posts = array();
+  $postsTitle = 'Recent Posts';
+
+  if(isset($_GET['t_id'])){
+    $posts = getPostsByTopicId($_GET['t_id']);
+    $postsTitle = 'You Search For Posts Under "'.$_GET['name'].'"';
+  }
+  else if(isset($_POST['search-term'])){
+    $postsTitle = 'You Search For "'.$_POST['search-term'].'"';
+    $posts = searchPosts($_POST['search-term']);
+  }else{
+    $posts = getPublishedPosts();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,110 +42,44 @@
       <i class="fa fa-chevron-right next"></i>
       <i class="fa fa-chevron-left prev"></i>
       <div class="posts-wrapper">
+        <?php foreach($posts as $post): ?>
         <div class="post">
           <div class="inner-post">
             <img src="Assets/images/image_7.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="post-info">
-              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
+              <h4><a href="single.php?id=<?=$post['id']; ?>">One day your life will flash before your eyes</a></h3>
                 <div>
-                  <i class="fa fa-user-o"></i> Awa Melvine
+                  <i class="fa fa-user-o"></i> <?=$post['username']; ?>
                   &nbsp;
-                  <i class="fa fa-calendar"></i> Jan 18, 2019
+                  <i class="fa fa-calendar"></i> <?=date('F j, Y', strtotime($post['created_at'])); ?>
                 </div>
             </div>
           </div>
         </div>
-        <div class="post">
-          <div class="inner-post">
-            <img src="Assets/images/image_6.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-            <div class="post-info">
-              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
-                <div>
-                  <i class="fa fa-user-o"></i> Awa Melvine
-                  &nbsp;
-                  <i class="fa fa-calendar"></i> Jan 18, 2019
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="post">
-          <div class="inner-post">
-            <img src="Assets/images/image_5.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-            <div class="post-info">
-              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
-                <div>
-                  <i class="fa fa-user-o"></i> Awa Melvine
-                  &nbsp;
-                  <i class="fa fa-calendar"></i> Jan 18, 2019
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="post">
-          <div class="inner-post">
-            <img src="Assets/images/image_4.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-            <div class="post-info">
-              <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-              <div>
-                <i class="fa fa-user-o"></i> Awa Melvine
-                &nbsp;
-                <i class="fa fa-calendar"></i> Jan 18, 2019
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
     <!-- // Posts Slider -->
     <!-- content -->
     <div class="content clearfix">
       <div class="page-content">
-        <h1 class="recent-posts-title">Recent Posts</h1>
+        <h1 class="recent-posts-title"><?=$postsTitle; ?></h1>
+        <?php foreach($posts as $post): ?>
         <div class="post clearfix">
           <img src="Assets/images/image_1.png" class="post-image" alt="">
           <div class="post-content">
-            <h2 class="post-title"><a href="#">The strongest and sweetest songs yet remain to be sung</a></h2>
+            <h2 class="post-title"><a href="single.php?id=<?=$post['id']; ?>"><?=$post['title']; ?></a></h2>
             <div class="post-info">
-              <i class="fa fa-user-o"></i> Awa Melvine
+              <i class="fa fa-user-o"></i> <?=$post['username']; ?>
               &nbsp;
-              <i class="fa fa-calendar"></i> Jan 18, 2019
+              <i class="fa fa-calendar"></i> <?=date('F j, Y', strtotime($post['created_at'])); ?>
             </div>
-            <p class="post-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora
-              qui sunt! Ipsum nihil unde obcaecati.
+            <p class="post-body"><?=html_entity_decode(substr($post['body'], 0, 150). '...'); ?>
             </p>
-            <a href="#" class="read-more">Read More</a>
+            <a href="single.php?id=<?=$post['id']; ?>" class="read-more">Read More</a>
           </div>
         </div>
-        <div class="post clearfix">
-          <img src="Assets/images/image_2.png" class="post-image" alt="">
-          <div class="post-content">
-            <h2 class="post-title"><a href="#">That love is all there is, is all we know of love</h2></a>
-            <div class="post-info">
-              <i class="fa fa-user-o"></i> Awa Melvine
-              &nbsp;
-              <i class="fa fa-calendar"></i> Jan 18, 2019
-            </div>
-            <p class="post-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora
-              qui sunt! Ipsum nihil unde obcaecati.
-            </p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
-        <div class="post clearfix">
-          <img src="Assets/images/image_3.png" class="post-image" alt="">
-          <div class="post-content">
-            <h2 class="post-title"><a href="#">Do anything, but let it produce joy</a></h2>
-            <div class="post-info">
-              <i class="fa fa-user-o"></i> Awa Melvine
-              &nbsp;
-              <i class="fa fa-calendar"></i> Jan 18, 2019
-            </div>
-            <p class="post-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora
-              qui sunt! Ipsum nihil unde obcaecati.
-            </p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
       <div class="sidebar">
         <!-- Search -->
@@ -146,7 +94,7 @@
           <h2>Topics</h2>
           <ul>
             <?php foreach($topics as $key => $topic): ?>
-              <li><a href="#"><?=$topic['name']; ?></a></li>
+              <li><a href="<?= 'index.php?t_id=' . $topic['id'] . '&name=' . $topic['name']; ?>"><?=$topic['name']; ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>

@@ -107,4 +107,36 @@
         $stat = executeQuery($sql, ['id' => $id]);
         return $stat->affected_rows;
     }
+    function getPublishedPosts(){
+        global $conn;
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=?";
+        
+        $stat = executeQuery($sql, ['published' => 1]);
+        $records = $stat->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
+    function searchPosts($term){
+        $match = '%' . $term . '%';
+        global $conn;
+        $sql = "SELECT p.*, u.username 
+                FROM posts 
+                AS p 
+                JOIN users 
+                AS u 
+                ON p.user_id=u.id 
+                WHERE p.published=? 
+                AND p.title LIKE ? OR p.body LIKE ?";
+        
+        $stat = executeQuery($sql, ['published' => 1, 'title' => $match, 'body' => $match]);
+        $records = $stat->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
+    function getPostsByTopicId($topic_id){
+        global $conn;
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=? AND topic_id=?";
+        
+        $stat = executeQuery($sql, ['published' => 1, 'topic_id' => $topic_id]);
+        $records = $stat->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
 ?>

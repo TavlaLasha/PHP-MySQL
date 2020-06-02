@@ -20,7 +20,7 @@
             </a>
             <ul class="dropdown">
             <?php if($_SESSION['admin']):?>
-              <li><a href="admin/dashboard.php">Dashboard</a></li>
+              <li><a href="admin/dashboard/dashboard.php">Dashboard</a></li>
             <?php endif;?>
               <li><a href="logout.php" class="logout">logout</a></li>
             </ul>

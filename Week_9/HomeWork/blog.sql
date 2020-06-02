@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2020 at 04:06 PM
+-- Generation Time: Jun 02, 2020 at 11:17 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,20 +31,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `topic_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `body` text NOT NULL,
   `published` tinyint(4) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `title`, `image`, `body`, `published`, `created_at`) VALUES
-(1, 1, 'jQuery ', 'none', '<p>sdsd</p>', 1, '0000-00-00 00:00:00'),
-(2, 1, 'jQuery ', 'none', '<p>sdsd</p>', 1, '0000-00-00 00:00:00');
+INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `title`, `image`, `body`, `published`, `created_at`) VALUES
+(28, 26, 4, 'The strongest and sweetest songs yet remain to be sung', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:57:54'),
+(29, 26, 5, 'That love is all there is, is all we know of love', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:14'),
+(30, 26, 8, 'One day life will flash before your eyes', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:57'),
+(31, 26, 9, 'Do anything, but let it produce joy', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:59:21'),
+(32, 26, 7, 'The spectacles before us was indeed sublime', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-03 00:00:14');
 
 -- --------------------------------------------------------
 
@@ -63,8 +67,12 @@ CREATE TABLE `topics` (
 --
 
 INSERT INTO `topics` (`id`, `name`, `description`) VALUES
-(1, 'ggg', 'lkk'),
-(3, 'ლაშა', 'lll');
+(4, 'Quotes', ''),
+(5, 'Lession', ''),
+(6, 'Fiction', ''),
+(7, 'Biography', ''),
+(8, 'Motivation', ''),
+(9, 'Inspiration', '');
 
 -- --------------------------------------------------------
 
@@ -73,7 +81,7 @@ INSERT INTO `topics` (`id`, `name`, `description`) VALUES
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `admin` tinyint(4) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(70) NOT NULL,
@@ -85,8 +93,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `admin`, `username`, `email`, `password`, `create_dt`) VALUES
-(19, 0, 'Tavla_Lasha', 'lLLashatavlalashvili@yahoo.com', '$2y$10$DD3swuvANw8t2Dz5pYn/ludT/adERfPFfZYpm79W1BUkTsJOhD9Ue', '2020-06-01 13:15:41');
+INSERT INTO `users` (`id`, `admin`, `username`, `email`, `password`, `create_dt`) VALUES
+(26, 1, 'Tavla_Lasha', 'lashatavlalashvili@yahoo.com', '$2y$10$8z9PupkTqXiADpQeR0DbKem9CP02blE5qhHKPpB8EtFwAdVxH.Lka', '2020-06-02 19:07:07');
 
 --
 -- Indexes for dumped tables
@@ -96,7 +104,8 @@ INSERT INTO `users` (`user_id`, `admin`, `username`, `email`, `password`, `creat
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `topic_id` (`topic_id`);
 
 --
 -- Indexes for table `topics`
@@ -108,7 +117,7 @@ ALTER TABLE `topics`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -118,19 +127,29 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`topic_id`) REFERENCES `topics` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
