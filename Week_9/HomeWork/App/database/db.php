@@ -94,7 +94,7 @@
             }
             $i++;
         }
-        $sql = $sql." WHERE user_id=?";
+        $sql = $sql." WHERE id=?";
         $data['id'] = $id;
         $stat = executeQuery($sql, $data);
         return $stat->affected_rows;
@@ -102,7 +102,7 @@
     function delete($table, $id){
         global $conn;
 
-        $sql = "DELETE FROM $table WHERE user_id=?";
+        $sql = "DELETE FROM $table WHERE id=?";
 
         $stat = executeQuery($sql, ['id' => $id]);
         return $stat->affected_rows;

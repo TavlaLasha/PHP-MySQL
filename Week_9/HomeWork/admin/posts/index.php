@@ -1,3 +1,8 @@
+<?php
+  include "../../App/database/db.php";
+  include "../../App/helpers/validatePost.php";
+  include "../../App/controllers/posts.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +42,9 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Manage Posts</h2>
+        <?php
+          include "../../App/blocks/message.php";
+        ?>
         <table>
           <thead>
             <th>N</th>
@@ -45,72 +53,20 @@
             <th colspan="3">Action</th>
           </thead>
           <tbody>
-            <tr class="rec">
-              <td>1</td>
-              <td>
-                <a href="#">A replacement for new year resolutions - a 12 months challenge</a>
-              </td>
-              <td>Awa</td>
-              <td>
-                <a href="edit.php" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-              <td>
-                <a href="#" class="publish">
-                  Publish
-                </a>
-              </td>
-            </tr>
-            <tr class="rec">
-              <td>2</td>
-              <td>
-                <a href="#">Why life is beautiful</a>
-              </td>
-              <td>Awa</td>
-              <td>
-                <a href="edit.php" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-              <td>
-                <a href="#" class="publish">
-                  Publish
-                </a>
-              </td>
-            </tr>
-            <tr class="rec">
-              <td>3</td>
-              <td>
-                <a href="#">Interesting facts about the history of the world</a>
-              </td>
-              <td>Awa</td>
-              <td>
-                <a href="edit.php" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-              <td>
-                <a href="#" class="publish">
-                  Publish
-                </a>
-              </td>
-            </tr>
+            <?php foreach($posts as $key => $post): ?>
+                <tr class="rec">
+                  <td><?=$key+1; ?></td>
+                  <td><a href="#"><?=$post['title']; ?></a></td>
+                  <td><a href="#">Lasha</a></td>
+                  <td><a href="edit.php?id=<?=$post['id']; ?>" class="edit">Edit</a></td>
+                  <td><a href="index.php?del_id=<?=$post['id']; ?>" class="delete">Delete</a></td>
+                  <?php if($post['published']): ?>
+                    <td><a href="index.php?del_id=<?=$post['id']; ?>" class="unpublish">Unpublish</a></td>
+                  <?php else: ?>
+                    <td><a href="index.php?del_id=<?=$post['id']; ?>" class="publish">Publish</a></td>
+                  <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
 

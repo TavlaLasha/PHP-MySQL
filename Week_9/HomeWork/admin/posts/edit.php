@@ -1,3 +1,8 @@
+<?php
+  include "../../App/database/db.php";
+  include "../../App/helpers/validatePost.php";
+  include "../../App/controllers/posts.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 

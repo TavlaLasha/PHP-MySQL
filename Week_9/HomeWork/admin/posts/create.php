@@ -1,3 +1,8 @@
+<?php
+  include "../../App/database/db.php";
+  include "../../App/helpers/validatePost.php";
+  include "../../App/controllers/posts.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,23 +42,29 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Create Post</h2>
-
+        <?php
+          include "../../App/helpers/formErrors.php";
+        ?>
         <form action="create.php" method="post">
           <div class="input-group">
             <label>Title</label>
-            <input type="text" name="title" class="text-input">
+            <input type="text" name="title" value="<?=$title; ?>" class="text-input">
           </div>
           <div class="input-group">
             <label>Body</label>
-            <textarea class="text-input" name="body" id="body"></textarea>
+            <textarea class="text-input" name="body" id="body"><?=$body; ?></textarea>
           </div>
           <div class="input-group">
             <label>Topic</label>
-            <select class="text-input" name="topic">
-              <option>Life</option>
-              <option>Poetry</option>
-              <option>Inspiration</option>
-              <option>Life Lessons</option>
+            <select class="text-input" name="topic_id">
+              <option value=""></option>
+              <?php foreach($topics as $key => $topic):?>
+                <?php if(!empty($topic_id) && $topic_id == $topic['id']):?>
+                  <option selected value="<?=$topic['id']; ?>"><?=$topic['name']; ?></option>
+                <?php else: ?>
+                  <option value="<?=$topic['id']; ?>"><?=$topic['name']; ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </select>
           </div>
           <div class="input-group">

@@ -1,3 +1,8 @@
+<?php
+  include "../../App/database/db.php";
+  include "../../App/helpers/validateTopic.php";
+  include "../../App/controllers/topics.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,15 +42,18 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Create Topic</h2>
+        <?php
+          include "../../App/helpers/formErrors.php";
+        ?>
 
         <form action="create.php" method="post">
           <div class="input-group">
             <label>Name</label>
-            <input type="text" name="name" class="text-input">
+            <input type="text" name="name" value="<?=$name?>" class="text-input">
           </div>
           <div class="input-group">
             <label>Description</label>
-            <textarea class="text-input" name="description" id="description"></textarea>
+            <textarea class="text-input" name="description" id="description"><?=$description?></textarea>
           </div>
           <div class="input-group">
             <button type="submit" name="save-topic" class="btn" >Save Topic</button>

@@ -1,7 +1,7 @@
 <header class="clearfix">
     <div class="logo">
       <a href="index.php">
-        <h1 class="logo-text"><span>Awa</span>Inspires</h1>
+        <h1 class="logo-text"><span>Lasha's </span>Blog</h1>
       </a>
     </div>
     <div class="fa fa-reorder menu-toggle"></div>

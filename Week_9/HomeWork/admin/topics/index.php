@@ -1,3 +1,8 @@
+<?php
+  include "../../App/database/db.php";
+  include "../../App/helpers/validateTopic.php";
+  include "../../App/controllers/topics.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +43,10 @@
       <div class="">
         <h2 style="text-align: center;">Manage Topic</h2>
         
+        <?php
+          include "../../App/blocks/message.php";
+        ?>
+
         <table>
           <thead>
             <th>N</th>
@@ -45,54 +54,14 @@
             <th colspan="2">Action</th>
           </thead>
           <tbody>
-            <tr class="rec">
-              <td>1</td>
-              <td>
-                <a href="#">Life</a>
-              </td>
-              <td>
-                <a href="#" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-            </tr>
-            <tr class="rec">
-              <td>2</td>
-              <td>
-                <a href="#">Poetry</a>
-              </td>
-              <td>
-                <a href="#" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-            </tr>
-            <tr class="rec">
-              <td>3</td>
-              <td>
-                <a href="#">Life Lessons</a>
-              </td>
-              <td>
-                <a href="#" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-            </tr>
+            <?php foreach($topics as $key => $topic): ?>
+              <tr class="rec">
+                <td><?=$key+1; ?></td>
+                <td><a href="#"><?=$topic['name']; ?></a></td>
+                <td><a href="edit.php?id=<?=$topic['id']; ?>" class="edit">Edit</a></td>
+                <td><a href="index.php?del_id=<?=$topic['id']; ?>" class="delete">Delete</a></td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
 
