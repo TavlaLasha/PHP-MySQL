@@ -36,30 +36,6 @@
   ?>
   <!-- Page wrapper -->
   <div class="page-wrapper">
-    <!-- Posts Slider -->
-    <div class="posts-slider">
-      <h1 class="slider-title">Trending Posts</h1>
-      <i class="fa fa-chevron-right next"></i>
-      <i class="fa fa-chevron-left prev"></i>
-      <div class="posts-wrapper">
-        <?php foreach($posts as $post): ?>
-        <div class="post">
-          <div class="inner-post">
-            <img src="Assets/images/image_7.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-            <div class="post-info">
-              <h4><a href="single.php?id=<?=$post['id']; ?>">One day your life will flash before your eyes</a></h3>
-                <div>
-                  <i class="fa fa-user-o"></i> <?=$post['username']; ?>
-                  &nbsp;
-                  <i class="fa fa-calendar"></i> <?=date('F j, Y', strtotime($post['created_at'])); ?>
-                </div>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-    <!-- // Posts Slider -->
     <!-- content -->
     <div class="content clearfix">
       <div class="page-content">

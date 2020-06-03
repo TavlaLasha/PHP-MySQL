@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2020 at 11:17 PM
+-- Generation Time: Jun 03, 2020 at 08:52 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,11 +44,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `topic_id`, `title`, `image`, `body`, `published`, `created_at`) VALUES
-(28, 26, 4, 'The strongest and sweetest songs yet remain to be sung', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:57:54'),
-(29, 26, 5, 'That love is all there is, is all we know of love', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:14'),
-(30, 26, 8, 'One day life will flash before your eyes', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:57'),
-(31, 26, 9, 'Do anything, but let it produce joy', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:59:21'),
-(32, 26, 7, 'The spectacles before us was indeed sublime', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-03 00:00:14');
+(28, 26, 4, 'The strongest and sweetest songs yet remain to be sung', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.vLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:57:54'),
+(29, 26, 5, 'That love is all there is, is all we know of love', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.vLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:14'),
+(30, 26, 8, 'One day life will flash before your eyes', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.vLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:58:57'),
+(31, 26, 9, 'Do anything, but let it produce joy and love', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.vLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-02 23:59:21'),
+(32, 26, 7, 'The spectacles before us was indeed sublime', 'none', '&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.vLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita tempora qui sunt! Ipsum nihil unde obcaecati.&lt;/p&gt;', 1, '2020-06-03 00:00:14');
 
 -- --------------------------------------------------------
 
@@ -139,7 +139,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

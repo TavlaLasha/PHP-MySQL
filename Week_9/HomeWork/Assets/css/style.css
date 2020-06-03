@@ -14,12 +14,12 @@ a {
 }
 
 a:hover, a:active {
-  color: #008489;
+  color: #797979;
 }
 
 .logo-text, h1, h2, h3, h4, h5, h6 {
   font-family: 'Candal', sans-serif;
-  margin: 5px;
+  margin: 7px;
   color: #5c5b5b;
   font-weight: normal;
 }
@@ -62,7 +62,7 @@ a:hover, a:active {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: .25rem;
-  background: #008489;
+  background: #5ba0da;
   color: #fff;
 }
 
@@ -74,7 +74,7 @@ a:hover, a:active {
 
 .btn:hover {
   cursor: pointer;
-  background: #00767a;
+  background: #368ed6;
 }
 
 .input-group {
@@ -115,7 +115,7 @@ a:hover, a:active {
 /* NAVBAR */
 
 header {
-  background: #008489;
+  background: #1f1f1f;
   color: #ffffff;
   height: 66px;
 }
@@ -137,7 +137,7 @@ header a:hover {
 }
 
 .logo-text span {
-  color: #6ed6e9;
+  color: #648fec;
 }
 
 header nav {
@@ -162,7 +162,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background: #006669;
+  background: #505050;
   transition: 0.5s;
 }
 
@@ -388,7 +388,7 @@ header nav ul .userinfo i.fa-chevron-down {
   text-decoration: none;
   color: inherit;
   text-align: center;
-  border: 1px solid #8BC7C9;
+  border: 1px solid #5ba0da;
   padding: 8px 15px;
   border-radius: 0px;
   position: absolute;
@@ -398,8 +398,8 @@ header nav ul .userinfo i.fa-chevron-down {
 
 .content .page-content .post .read-more:hover {
   color: white;
-  background: #008489;
-  border: 1px solid #008489;
+  background: #5ba0da;
+  border: 1px solid #328fdb;
   transition: .5s;
 }
 
@@ -449,7 +449,7 @@ header nav ul .userinfo i.fa-chevron-down {
   margin-top: -50px;
   background: #303036;
   color: #d3d3d3;
-  height: 401px;
+  height: 300px;
   position: relative;
 }
 
@@ -542,7 +542,7 @@ header nav ul .userinfo i.fa-chevron-down {
 
 .footer .footer-content .contact-form-div .send-msg-btn {
   float: right;
-  background: #008489;
+  background: #4094d8;
   color: #d3d3d3;
   cursor: pointer;
   border: none;
@@ -595,13 +595,13 @@ header nav ul .userinfo i.fa-chevron-down {
     width: 100%;
   }
   header nav ul li .dropdown li a {
-    background: #0E94A0;
+    background: #1f1f1f;
     color: white;
     padding: 15px;
     padding-left: 50px;
   }
   header nav ul li .dropdown li a:hover {
-    background: #0E94A0;
+    background: #505050;
   }
 }
 

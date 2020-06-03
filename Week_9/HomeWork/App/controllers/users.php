@@ -7,7 +7,7 @@
     $passwordConf = '';
     $errors = array();
     $table = 'users';
-    $admin_users = selectAll($table, ['admin' => 1]);
+    $admin_users = selectAll($table);
     
     function userLogin($user){
         $_SESSION['id'] = $user['id'];
@@ -80,7 +80,7 @@
         $user = selectOne($table, ['id' => $_GET['id']]);
         $id = $user['id'];
         $username = $user['username'];
-        $admin = isset($user['admin']) ? 1 : 0;
+        $admin = $user['admin'] == 1 ? 1 : 0;
         $email = $user['email'];
     }
     if(isset($_POST['login-btn'])){
